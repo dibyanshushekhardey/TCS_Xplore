@@ -1,5 +1,5 @@
 # printing in python
-
+# printing in python using format operator
 a = 10
 b = 20
 c = a+b

@@ -1,3 +1,5 @@
+# check the marks year and age of a student
+
 marks = int(input())
 year = int(input())
 age = int(input())
