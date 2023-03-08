@@ -1,0 +1,13 @@
+msg='Hello'
+a=msg[0]
+b=msg[4]
+c=msg[-0]
+d=msg[-1]
+e=msg[-2]
+f=msg[-5]
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+print(f)
