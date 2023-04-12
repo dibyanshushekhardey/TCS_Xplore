@@ -4,7 +4,7 @@ def middleString(t, N):
     if len(t) % 2 != 0:
         x=t[middle:middle+N]
     else:
-        x=t[middle-1:middle+N]
+        x=t[middle-1:middle+N-1]
     if len(x) == 0:
         return t[-1]
     else:
