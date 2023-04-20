@@ -157,6 +157,59 @@ Cardiologist
 
 '''
 
+# class Doctor:
+#     def __init__(self, doctorId, doctorName, specialization, consultationFee):
+#         self.doctorId=doctorId
+#         self.doctorName = doctorName
+#         self.specialization=specialization
+#         self.consultationFee=consultationFee
+
+# class Hospital:
+#     def __init__(self, doctor_dict):
+#         self.doctor_dict=doctor_dict
+    
+#     def searchBydoctorName(self, inpt_dname):
+#         lst=[]
+#         for k, v in self.doctor_dict.items():
+#             if v.doctorName.lower() == inpt_dname.lower():
+#                 lst.append(v)
+        
+#         if lst == []:
+#             print('No Doctor Exists with the given DoctorName')
+#         else:
+#             for i in lst:
+#                 print(i.doctorId)
+#                 print(i.doctorName)
+#                 print(i.specialization)
+#                 print(i.consultationFee)
+    
+#     def calculateConsulationFeeBySpecialization(self, inpt_sp):
+#         fee = 0
+#         for k, v in self.doctor_dict.items():
+#             if v.specialization.lower() == inpt_sp.lower():
+#                 fee += v.consultationFee
+#         if fee == 0:
+#             print('No Doctor with the given specialization')
+#         else:
+#             print(fee)
+
+
+# n=int(input())
+# doctor_dict={}
+# sno=1
+# for i in range(n):
+#     doctorId=int(input())
+#     doctorName=input()
+#     specialization=input()
+#     consultationFee=int(input())
+#     doctor_dict[sno]=Doctor(doctorId, doctorName, specialization, consultationFee)
+#     sno += 1
+# inpt_dname=input()
+# inpt_sp=input()
+# obj=Hospital(doctor_dict)
+# obj.searchBydoctorName(inpt_dname)
+# obj.calculateConsulationFeeBySpecialization(inpt_sp)
+
 class Doctor:
     def __init__(self, doctorId, doctorName, specialization, consultationFee):
         self.doctorId=doctorId
@@ -165,12 +218,11 @@ class Doctor:
         self.consultationFee=consultationFee
 
 class Hospital:
-    def __init__(self, doctor_dict):
-        self.doctor_dict=doctor_dict
     
-    def searchBydoctorName(self, inpt_dname):
+    @staticmethod
+    def searchBydoctorName(doctor_dict, inpt_dname):
         lst=[]
-        for k, v in self.doctor_dict.items():
+        for k, v in doctor_dict.items():
             if v.doctorName.lower() == inpt_dname.lower():
                 lst.append(v)
         
@@ -183,9 +235,10 @@ class Hospital:
                 print(i.specialization)
                 print(i.consultationFee)
     
-    def calculateConsulationFeeBySpecialization(self, inpt_sp):
+    @staticmethod
+    def calculateConsulationFeeBySpecialization(doctor_dict, inpt_sp):
         fee = 0
-        for k, v in self.doctor_dict.items():
+        for k, v in doctor_dict.items():
             if v.specialization.lower() == inpt_sp.lower():
                 fee += v.consultationFee
         if fee == 0:
@@ -206,6 +259,6 @@ for i in range(n):
     sno += 1
 inpt_dname=input()
 inpt_sp=input()
-obj=Hospital(doctor_dict)
-obj.searchBydoctorName(inpt_dname)
-obj.calculateConsulationFeeBySpecialization(inpt_sp)
+#obj=Hospital(doctor_dict)
+Hospital.searchBydoctorName(doctor_dict,inpt_dname)
+Hospital.calculateConsulationFeeBySpecialization(doctor_dict,inpt_sp)
